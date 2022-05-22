@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00ff00">
+    <!-- 无用属性 android:orientation="vertical" -->
+
+
+
+    <Button
+        android:id="@+id/b1"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="button 1"
+        android:textColor="#ff0000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"/>
+    <!--  作用一致
+    android:layout_marginStart="30dp"
+    android:layout_marginLeft="30dp"
+     -->
+
+    <Button
+        android:id="@+id/b2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="button 2"
+        android:textSize="40sp"
+        android:background="#ff0000"
+        app:layout_constraintTop_toBottomOf="@id/b1"
+        app:layout_constraintStart_toStartOf="@id/b1"/>
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text1"
+        app:layout_constraintStart_toEndOf="@id/b2"
+        app:layout_constraintTop_toTopOf="@id/b2"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text2"
+        app:layout_constraintStart_toEndOf="@id/text1"
+        app:layout_constraintTop_toTopOf="@id/b2"
+        app:layout_constraintBottom_toBottomOf="@id/b2"
+        android:layout_marginLeft="20dp"/>
+
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text3"
+        android:background="@color/colorAccent"
+        android:textSize="30sp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintLeft_toRightOf="@id/text2"
+        app:layout_constraintBaseline_toBaselineOf="@id/b2"
+        android:layout_marginLeft="10dp"/>
+
+
+    <Button
+        android:id="@+id/b3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="button3"
+        app:layout_constraintTop_toBottomOf="@id/b2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp"
+        android:visibility="visible"/>
+
+
+    <!-- 注意相对控件为gone情况，可能出现未知的情况,所以最好别去相对控件可能
+        为gone的组件, 行为是: 约束还在 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text4"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@id/b3"
+        app:layout_constraintBottom_toBottomOf="@id/b3"
+        android:layout_marginLeft="50dp"
+        app:layout_goneMarginLeft="10dp"/>
+
+
+    <Button
+        android:id="@+id/b4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="button4"
+        app:layout_constraintTop_toBottomOf="@id/b3"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="10dp"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/text5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text5"
+        app:layout_constraintStart_toEndOf="@id/b4"
+        app:layout_constraintTop_toBottomOf="@id/b3"
+        android:layout_marginLeft="100dp"
+        app:layout_goneMarginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/text6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="text6"
+        app:layout_constraintStart_toEndOf="@id/text5"
+        app:layout_constraintTop_toBottomOf="@id/b3"
+        android:layout_marginLeft="10dp"/>
+
+
+    <!--
+        给一个组件设置最小宽度以及最大宽度
+        app:layout_constrainedWidth="true"
+        app:layout_constraintWidth_min="80dp"
+        app:layout_constraintWidth_max="140dp"
+    -->
+    <TextView
+        android:id="@+id/text7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text6000000012345678"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/b4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintWidth_min="80dp"
+        app:layout_constraintWidth_max="140dp"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toBottomOf="@id/text7"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="20dp"
+        android:background="#0000ff"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/b5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="button5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/b6"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <Button
+            android:id="@+id/b6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="button6"
+            app:layout_constraintStart_toEndOf="@id/b5"
+            app:layout_constraintEnd_toStartOf="@id/b7"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <Button
+            android:id="@+id/b7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="button7"
+            app:layout_constraintStart_toEndOf="@id/b6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="30dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
